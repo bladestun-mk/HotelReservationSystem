@@ -14,4 +14,33 @@ public class HotelReservationTest {
         // Check the count after creating instances
         Assert.assertEquals(3, Hotel.getHotelCount());
     }
+    @Test
+    public void testCalculateLakewoodCost() {
+        HotelReservationMain hotelReservation = new HotelReservationMain();
+        String startDate = "10/9/2020";
+        String endDate = "11/9/2020";
+
+        int lakewoodCost = hotelReservation.calculateTotalCost(startDate, endDate, hotelReservation.lakewood);
+        Assert.assertEquals(220, lakewoodCost);
+    }
+
+    @Test
+    public void testCalculateBridgewoodCost() {
+        HotelReservationMain hotelReservation = new HotelReservationMain();
+        String startDate = "10/9/2020";
+        String endDate = "11/9/2020";
+
+        int bridgewoodCost = hotelReservation.calculateTotalCost(startDate, endDate, hotelReservation.bridgewood);
+        Assert.assertEquals(320, bridgewoodCost);
+    }
+
+    @Test
+    public void testCalculateRidgewoodCost() {
+        HotelReservationMain hotelReservation = new HotelReservationMain();
+        String startDate = "10/9/2020";
+        String endDate = "11/9/2020";
+
+        int ridgewoodCost = hotelReservation.calculateTotalCost(startDate, endDate, hotelReservation.ridgewood);
+        Assert.assertEquals(440, ridgewoodCost);
+    }
 }
