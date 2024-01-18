@@ -7,9 +7,9 @@ import java.util.Date;
 
 public class HotelReservationMain {
 
-        Hotel lakewood = new Hotel("Lakewood", 110);
-        Hotel bridgewood = new Hotel("Bridgewood", 160);
-        Hotel ridgewood = new Hotel("Ridgewood", 220);
+        Hotel lakewood = new Hotel("Lakewood", 110,90);
+        Hotel bridgewood = new Hotel("Bridgewood", 160,60);
+        Hotel ridgewood = new Hotel("Ridgewood", 220,150);
     public int calculateTotalCost(String startDateString, String endDateString, Hotel hotel) {
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");

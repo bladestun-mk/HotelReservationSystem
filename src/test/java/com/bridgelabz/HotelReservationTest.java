@@ -8,9 +8,9 @@ public class HotelReservationTest {
     public void testHotelsAdded() {
         // Reset the count before the test to ensure a clean state
         Hotel.resetHotelCount();
-        Hotel lakewood = new Hotel("Lakewood", 110);
-        Hotel bridgewood = new Hotel("Bridgewood", 160);
-        Hotel ridgewood = new Hotel("Ridgewood", 220);
+        Hotel lakewood = new Hotel("Lakewood", 110,90);
+        Hotel bridgewood = new Hotel("Bridgewood", 160,150);
+        Hotel ridgewood = new Hotel("Ridgewood", 220,60);
         // Check the count after creating instances
         Assert.assertEquals(3, Hotel.getHotelCount());
     }
