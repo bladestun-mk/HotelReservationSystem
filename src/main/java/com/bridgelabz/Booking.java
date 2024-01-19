@@ -1,5 +1,7 @@
 package com.bridgelabz;
+
 import java.util.*;
+
 public class Booking {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
