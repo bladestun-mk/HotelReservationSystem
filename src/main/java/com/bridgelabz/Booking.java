@@ -13,14 +13,12 @@ public class Booking {
         String endDateString = sc.nextLine();
 
         HotelReservationMain hotelReservation = new HotelReservationMain();
-        List<Hotel> cheapestHotels = hotelReservation.findCheapest(startDateString, endDateString);
+        Hotel cheapAndBestRatedHotels = hotelReservation.findCheapest(startDateString, endDateString);
 
-        if (!cheapestHotels.isEmpty()) {
-            System.out.println("Cheapest Hotels:");
-            for (Hotel cheapestHotel : cheapestHotels) {
-                System.out.println("Hotel: " + cheapestHotel.getName());
-                System.out.println("Total Cost: " + hotelReservation.calculateTotalCost(startDateString, endDateString, cheapestHotel));
-            }
+        if (cheapAndBestRatedHotels!=null) {
+            System.out.println("Cheapest and Best Rated Hotels:");
+            System.out.println("Hotel: " + cheapAndBestRatedHotels.getName()+" Rating: " + cheapAndBestRatedHotels.getRating());
+            System.out.println("Total Cost: " + hotelReservation.calculateTotalCost(startDateString, endDateString, cheapAndBestRatedHotels));
         }
         sc.close();
     }

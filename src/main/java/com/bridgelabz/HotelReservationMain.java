@@ -39,7 +39,7 @@ public class HotelReservationMain {
         }
     }
 
-    public List<Hotel> findCheapest(String startDate, String endDate) {
+    public Hotel findCheapest(String startDate, String endDate) {
         Map<Hotel, Integer> hotelCostMap = new HashMap<>();
         hotelCostMap.put(lakewood, calculateTotalCost(startDate, endDate, lakewood));
         hotelCostMap.put(bridgewood, calculateTotalCost(startDate, endDate, bridgewood));
@@ -55,7 +55,12 @@ public class HotelReservationMain {
             }
         });
 
-        return cheapestHotels;
+        return bestRated(cheapestHotels);
+    }
+    private Hotel bestRated(List<Hotel> hotels) {
+        return hotels.stream()
+                .max(Comparator.comparingInt(Hotel::getRating))
+                .orElse(null);
     }
 
 
