@@ -2,14 +2,14 @@ package com.bridgelabz;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
+import java.util.*;
 
 public class HotelReservationMain {
 
-        Hotel lakewood = new Hotel("Lakewood", 110,90);
-        Hotel bridgewood = new Hotel("Bridgewood", 160,60);
-        Hotel ridgewood = new Hotel("Ridgewood", 220,150);
+    Hotel lakewood = new Hotel("Lakewood", 110, 90);
+    Hotel bridgewood = new Hotel("Bridgewood", 150, 50);
+    Hotel ridgewood = new Hotel("Ridgewood", 220, 150);
+
     public int calculateTotalCost(String startDateString, String endDateString, Hotel hotel) {
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
@@ -25,7 +25,9 @@ public class HotelReservationMain {
             int totalCost = 0;
 
             while (startCalendar.before(endCalendar) || startCalendar.equals(endCalendar)) {
-                int rate = hotel.getWeekdayRateForRegularCustomers();
+                int dayOfWeek = startCalendar.get(Calendar.DAY_OF_WEEK);
+                int rate = (dayOfWeek == Calendar.SUNDAY || dayOfWeek == Calendar.SATURDAY)
+                        ? hotel.getWeekendRateForRegularCustomers() : hotel.getWeekdayRateForRegularCustomers();
                 totalCost += rate;
 
                 startCalendar.add(Calendar.DAY_OF_MONTH, 1);
@@ -36,17 +38,25 @@ public class HotelReservationMain {
             return -1;
         }
     }
-    public Hotel findCheapest(String startDate, String endDate) {
-        int lakewoodCost = calculateTotalCost(startDate, endDate, lakewood);
-        int bridgewoodCost = calculateTotalCost(startDate, endDate, bridgewood);
-        int ridgewoodCost = calculateTotalCost(startDate, endDate, ridgewood);
 
-        if (lakewoodCost <= bridgewoodCost && lakewoodCost <= ridgewoodCost)
-            return lakewood;
-        else if (bridgewoodCost <= lakewoodCost && bridgewoodCost <= ridgewoodCost)
-            return bridgewood;
-        else
-            return ridgewood;
+    public List<Hotel> findCheapest(String startDate, String endDate) {
+        Map<Hotel, Integer> hotelCostMap = new HashMap<>();
+        hotelCostMap.put(lakewood, calculateTotalCost(startDate, endDate, lakewood));
+        hotelCostMap.put(bridgewood, calculateTotalCost(startDate, endDate, bridgewood));
+        hotelCostMap.put(ridgewood, calculateTotalCost(startDate, endDate, ridgewood));
+
+        int minCost = hotelCostMap.values().stream().min(Integer::compare).orElse(0);
+
+        List<Hotel> cheapestHotels = new ArrayList<>();
+
+        hotelCostMap.forEach((hotel, cost) -> {
+            if (cost == minCost) {
+                cheapestHotels.add(hotel);
+            }
+        });
+
+        return cheapestHotels;
     }
+
 
 }
