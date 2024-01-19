@@ -57,11 +57,30 @@ public class HotelReservationMain {
 
         return bestRated(cheapestHotels);
     }
+
     private Hotel bestRated(List<Hotel> hotels) {
         return hotels.stream()
                 .max(Comparator.comparingInt(Hotel::getRating))
                 .orElse(null);
     }
 
+    public Hotel findBestRated(String startDate, String endDate) {
+        Map<Hotel, Integer> hotelRatingMap = new HashMap<>();
+        hotelRatingMap.put(lakewood, calculateTotalCost(startDate, endDate, lakewood));
+        hotelRatingMap.put(bridgewood, calculateTotalCost(startDate, endDate, bridgewood));
+        hotelRatingMap.put(ridgewood, calculateTotalCost(startDate, endDate, ridgewood));
 
+        int maxRating = hotelRatingMap.values().stream().max(Integer::compare).orElse(3);
+
+        List<Hotel> bestRatedHotel = new ArrayList<>();
+
+        hotelRatingMap.forEach((hotel, rating) -> {
+            if (rating == maxRating) {
+                bestRatedHotel.add(hotel);
+            }
+        });
+        return bestRated(bestRatedHotel);
+
+
+    }
 }

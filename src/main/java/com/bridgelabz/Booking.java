@@ -14,12 +14,14 @@ public class Booking {
 
         HotelReservationMain hotelReservation = new HotelReservationMain();
         Hotel cheapAndBestRatedHotels = hotelReservation.findCheapest(startDateString, endDateString);
+        Hotel bestRating = hotelReservation.findBestRated(startDateString, endDateString);
 
-        if (cheapAndBestRatedHotels!=null) {
-            System.out.println("Cheapest and Best Rated Hotels:");
-            System.out.println("Hotel: " + cheapAndBestRatedHotels.getName()+" Rating: " + cheapAndBestRatedHotels.getRating());
-            System.out.println("Total Cost: " + hotelReservation.calculateTotalCost(startDateString, endDateString, cheapAndBestRatedHotels));
+        if (bestRating != null) {
+            System.out.println("Best Rated Hotel Is: " + bestRating.getName());
+            System.out.println("With Rating: " + bestRating.getRating());
+            System.out.println("Total Cost: " + hotelReservation.calculateTotalCost(startDateString, endDateString, bestRating));
         }
+
         sc.close();
     }
 }
