@@ -6,9 +6,9 @@ import java.util.*;
 
 public class HotelReservationMain {
 
-    Hotel lakewood = new Hotel("Lakewood", 110, 90, 3);
-    Hotel bridgewood = new Hotel("Bridgewood", 150, 50, 4);
-    Hotel ridgewood = new Hotel("Ridgewood", 220, 150, 5);
+    Hotel lakewood = new Hotel("Lakewood", 110, 90,80,80, 3);
+    Hotel bridgewood = new Hotel("Bridgewood", 150, 50,110,50, 4);
+    Hotel ridgewood = new Hotel("Ridgewood", 220, 150,100,40, 5);
 
     public int calculateTotalCost(String startDateString, String endDateString, Hotel hotel) {
         try {

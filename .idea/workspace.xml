@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db84575d-d9d5-46c6-be4f-423bd3735594" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bridgelabz/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bridgelabz/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bridgelabz/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bridgelabz/Hotel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bridgelabz/HotelReservationMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bridgelabz/HotelReservationMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/bridgelabz/HotelReservationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bridgelabz/HotelReservationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,19 +35,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Booking.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.HotelReservationTest.checkRightRatingAdded.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.HotelReservationTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.HotelReservationTest.testHotelsAdded.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.Booking.executor": "Run",
+    "JUnit.HotelReservationTest.checkRightRatingAdded.executor": "Run",
+    "JUnit.HotelReservationTest.checkRightRewardRatesAdded.executor": "Run",
+    "JUnit.HotelReservationTest.executor": "Run",
+    "JUnit.HotelReservationTest.testHotelsAdded.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "kotlin-language-version-configured": "true"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RunManager" selected="JUnit.HotelReservationTest">
     <configuration name="HotelReservationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HotelReservationSystem" />
       <extension name="coverage">
@@ -79,6 +80,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HotelReservationTest.checkRightRewardRatesAdded" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HotelReservationSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bridgelabz.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bridgelabz" />
+      <option name="MAIN_CLASS_NAME" value="com.bridgelabz.HotelReservationTest" />
+      <option name="METHOD_NAME" value="checkRightRewardRatesAdded" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HotelReservationTest.testHotelsAdded" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HotelReservationSystem" />
       <extension name="coverage">
@@ -98,6 +115,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.HotelReservationTest" />
+        <item itemvalue="JUnit.HotelReservationTest.checkRightRewardRatesAdded" />
         <item itemvalue="JUnit.HotelReservationTest.checkRightRatingAdded" />
         <item itemvalue="JUnit.HotelReservationTest.testHotelsAdded" />
       </list>
