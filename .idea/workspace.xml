@@ -7,7 +7,6 @@
     <list default="true" id="db84575d-d9d5-46c6-be4f-423bd3735594" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bridgelabz/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bridgelabz/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bridgelabz/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bridgelabz/Hotel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bridgelabz/HotelReservationMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bridgelabz/HotelReservationMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/bridgelabz/HotelReservationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bridgelabz/HotelReservationTest.java" afterDir="false" />
     </list>
@@ -37,20 +36,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.Booking.executor": "Run",
-    "JUnit.HotelReservationTest.checkRightRatingAdded.executor": "Run",
-    "JUnit.HotelReservationTest.checkRightRewardRatesAdded.executor": "Run",
-    "JUnit.HotelReservationTest.executor": "Run",
-    "JUnit.HotelReservationTest.testFindCheapestBestRated.executor": "Run",
-    "JUnit.HotelReservationTest.testHotelsAdded.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Booking.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HotelReservationTest.checkRightRatingAdded.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HotelReservationTest.checkRightRewardRatesAdded.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HotelReservationTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HotelReservationTest.testFindCheapestBestRated.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.HotelReservationTest.testHotelsAdded.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="JUnit.HotelReservationTest.testFindCheapestBestRated">
     <configuration name="HotelReservationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HotelReservationSystem" />

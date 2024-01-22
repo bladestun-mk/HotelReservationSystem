@@ -29,7 +29,7 @@ public class HotelReservationMain {
      * @param hotel           The hotel for which the cost is calculated.
      * @return The total cost of stay at the hotel, or -1 if there's an invalid date format.
      */
-    public int calculateTotalCost(String startDateString, String endDateString, Hotel hotel) {
+    public int calculateTotalCost(String startDateString, String endDateString, Hotel hotel, int customerType) {
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
             Date startDate = dateFormat.parse(startDateString);
@@ -45,8 +45,20 @@ public class HotelReservationMain {
 
             while (startCalendar.before(endCalendar) || startCalendar.equals(endCalendar)) {
                 int dayOfWeek = startCalendar.get(Calendar.DAY_OF_WEEK);
-                int rate = (dayOfWeek == Calendar.SUNDAY || dayOfWeek == Calendar.SATURDAY)
-                        ? hotel.getWeekendRateForRegularCustomers() : hotel.getWeekdayRateForRegularCustomers();
+                int rate = 0;
+                switch (customerType) {
+                    case 1: // Regular
+                        rate = (dayOfWeek == Calendar.SUNDAY || dayOfWeek == Calendar.SATURDAY)
+                                ? hotel.getWeekendRateForRegularCustomers() : hotel.getWeekdayRateForRegularCustomers();
+                        break;
+                    case 2: // Reward
+                        rate = (dayOfWeek == Calendar.SUNDAY || dayOfWeek == Calendar.SATURDAY)
+                                ? hotel.getWeekendRateForRewardCustomers() : hotel.getWeekdayRateForRewardCustomers();
+                        break;
+                    default:
+                        System.out.println("Invalid customer type. Please choose 1 for Regular or 2 for Reward.");
+                        return -1;
+                }
                 totalCost += rate;
 
                 startCalendar.add(Calendar.DAY_OF_MONTH, 1);
@@ -64,10 +76,10 @@ public class HotelReservationMain {
      * @param endDate   The check-out date in DD/MM/YYYY format.
      * @return The cheapest and best-rated hotel, or null if no hotels are available.
      */
-    public Hotel findCheapestBestRated(String startDate, String endDate) {
+    public Hotel findCheapestBestRated(String startDate, String endDate, int customerType) {
         List<Hotel> availableHotels = getAvailableHotels(startDate, endDate);
         return availableHotels.stream()
-                .min(Comparator.comparingInt(hotel -> calculateTotalCost(startDate, endDate, hotel)))
+                .min(Comparator.comparingInt(hotel -> calculateTotalCost(startDate, endDate, hotel,customerType)))
                 .orElse(null);
     }
     /**

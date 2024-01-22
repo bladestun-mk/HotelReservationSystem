@@ -10,10 +10,11 @@ public class HotelReservationTest {
         HotelReservationMain hotelReservation = new HotelReservationMain();
         String startDate = "11/9/2020";
         String endDate = "12/9/2020";
+        int regularCustomerType = 1;
 
-        Hotel cheapestBestRatedHotel = hotelReservation.findBestRated(startDate, endDate);
+        Hotel cheapestBestRatedHotel = hotelReservation.findCheapestBestRated(startDate, endDate,regularCustomerType);
         Assert.assertNotNull(cheapestBestRatedHotel);
-        Assert.assertEquals("Ridgewood", cheapestBestRatedHotel.getName());
+        Assert.assertEquals("Lakewood", cheapestBestRatedHotel.getName());
     }
 }
 
