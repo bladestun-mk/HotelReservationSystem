@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db84575d-d9d5-46c6-be4f-423bd3735594" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bridgelabz/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bridgelabz/Booking.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bridgelabz/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bridgelabz/Hotel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bridgelabz/HotelReservationMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bridgelabz/HotelReservationMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/bridgelabz/HotelReservationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bridgelabz/HotelReservationTest.java" afterDir="false" />
@@ -42,13 +44,14 @@
     "JUnit.HotelReservationTest.checkRightRatingAdded.executor": "Run",
     "JUnit.HotelReservationTest.checkRightRewardRatesAdded.executor": "Run",
     "JUnit.HotelReservationTest.executor": "Run",
+    "JUnit.HotelReservationTest.testFindCheapestBestRated.executor": "Run",
     "JUnit.HotelReservationTest.testHotelsAdded.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.HotelReservationTest">
+  <component name="RunManager" selected="JUnit.HotelReservationTest.testFindCheapestBestRated">
     <configuration name="HotelReservationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HotelReservationSystem" />
       <extension name="coverage">
@@ -96,6 +99,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HotelReservationTest.testFindCheapestBestRated" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="HotelReservationSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bridgelabz.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.bridgelabz" />
+      <option name="MAIN_CLASS_NAME" value="com.bridgelabz.HotelReservationTest" />
+      <option name="METHOD_NAME" value="testFindCheapestBestRated" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HotelReservationTest.testHotelsAdded" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HotelReservationSystem" />
       <extension name="coverage">
@@ -114,10 +133,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.HotelReservationTest.testFindCheapestBestRated" />
+        <item itemvalue="JUnit.HotelReservationTest.testHotelsAdded" />
         <item itemvalue="JUnit.HotelReservationTest" />
         <item itemvalue="JUnit.HotelReservationTest.checkRightRewardRatesAdded" />
         <item itemvalue="JUnit.HotelReservationTest.checkRightRatingAdded" />
-        <item itemvalue="JUnit.HotelReservationTest.testHotelsAdded" />
       </list>
     </recent_temporary>
   </component>

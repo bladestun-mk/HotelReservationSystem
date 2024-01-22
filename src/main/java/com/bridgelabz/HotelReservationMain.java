@@ -5,10 +5,13 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class HotelReservationMain {
-
-    Hotel lakewood = new Hotel("Lakewood", 110, 90,80,80, 3);
-    Hotel bridgewood = new Hotel("Bridgewood", 150, 50,110,50, 4);
-    Hotel ridgewood = new Hotel("Ridgewood", 220, 150,100,40, 5);
+    private List<Hotel> hotels;
+    HotelReservationMain(){
+        hotels = new ArrayList<>();
+        hotels.add(new Hotel("Lakewood", 110, 90,80,80, 3));
+        hotels.add(new Hotel("Bridgewood", 150, 50,110,50, 4));
+        hotels.add(new Hotel("Ridgewood", 220, 150,100,40, 5));
+    }
 
     public int calculateTotalCost(String startDateString, String endDateString, Hotel hotel) {
         try {
@@ -38,49 +41,20 @@ public class HotelReservationMain {
             return -1;
         }
     }
+    public Hotel findCheapestBestRated(String startDate, String endDate) {
+        List<Hotel> availableHotels = getAvailableHotels(startDate, endDate);
+        return availableHotels.stream()
+                .min(Comparator.comparingInt(hotel -> calculateTotalCost(startDate, endDate, hotel)))
+                .orElse(null);
+        }
 
-    public Hotel findCheapest(String startDate, String endDate) {
-        Map<Hotel, Integer> hotelCostMap = new HashMap<>();
-        hotelCostMap.put(lakewood, calculateTotalCost(startDate, endDate, lakewood));
-        hotelCostMap.put(bridgewood, calculateTotalCost(startDate, endDate, bridgewood));
-        hotelCostMap.put(ridgewood, calculateTotalCost(startDate, endDate, ridgewood));
-
-        int minCost = hotelCostMap.values().stream().min(Integer::compare).orElse(0);
-
-        List<Hotel> cheapestHotels = new ArrayList<>();
-
-        hotelCostMap.forEach((hotel, cost) -> {
-            if (cost == minCost) {
-                cheapestHotels.add(hotel);
-            }
-        });
-
-        return bestRated(cheapestHotels);
+    private List<Hotel> getAvailableHotels(String startDate, String endDate) {
+        return hotels;
     }
-
-    private Hotel bestRated(List<Hotel> hotels) {
-        return hotels.stream()
+    public Hotel findBestRated(String startDate, String endDate) {
+        List<Hotel> availableHotels = getAvailableHotels(startDate, endDate);
+        return availableHotels.stream()
                 .max(Comparator.comparingInt(Hotel::getRating))
                 .orElse(null);
-    }
-
-    public Hotel findBestRated(String startDate, String endDate) {
-        Map<Hotel, Integer> hotelRatingMap = new HashMap<>();
-        hotelRatingMap.put(lakewood, calculateTotalCost(startDate, endDate, lakewood));
-        hotelRatingMap.put(bridgewood, calculateTotalCost(startDate, endDate, bridgewood));
-        hotelRatingMap.put(ridgewood, calculateTotalCost(startDate, endDate, ridgewood));
-
-        int maxRating = hotelRatingMap.values().stream().max(Integer::compare).orElse(3);
-
-        List<Hotel> bestRatedHotel = new ArrayList<>();
-
-        hotelRatingMap.forEach((hotel, rating) -> {
-            if (rating == maxRating) {
-                bestRatedHotel.add(hotel);
-            }
-        });
-        return bestRated(bestRatedHotel);
-
-
     }
 }

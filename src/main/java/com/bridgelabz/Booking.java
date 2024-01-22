@@ -13,15 +13,15 @@ public class Booking {
         String endDateString = sc.nextLine();
 
         HotelReservationMain hotelReservation = new HotelReservationMain();
-        Hotel cheapAndBestRatedHotels = hotelReservation.findCheapest(startDateString, endDateString);
-        Hotel bestRating = hotelReservation.findBestRated(startDateString, endDateString);
-
-        if (bestRating != null) {
-            System.out.println("Best Rated Hotel Is: " + bestRating.getName());
-            System.out.println("With Rating: " + bestRating.getRating());
-            System.out.println("Total Cost: " + hotelReservation.calculateTotalCost(startDateString, endDateString, bestRating));
+        Hotel cheapestBestRatedHotel = hotelReservation.findCheapestBestRated(startDateString, endDateString);
+        if (cheapestBestRatedHotel != null) {
+            System.out.println("Cheapest Best Rated Hotel: " + cheapestBestRatedHotel.getName());
+            System.out.println("Rating: " + cheapestBestRatedHotel.getRating());
+            System.out.println("Total Reward Cost: " +
+                    hotelReservation.calculateTotalCost(startDateString, endDateString, cheapestBestRatedHotel));
+        } else {
+            System.out.println("No hotels available for the specified date range.");
         }
-
         sc.close();
     }
 }

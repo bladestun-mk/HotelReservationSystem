@@ -48,6 +48,4 @@ public class Hotel {
     public static void resetHotelCount() {
         hotelCount = 0;
     }
-
-
 }
